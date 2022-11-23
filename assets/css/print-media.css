@@ -1,0 +1,40 @@
+app-print-layout {
+    /* hide the printing component from @media screen */
+    display: none;
+    background-color: #ffffff;
+}
+
+@media print {
+    /* invert the display (show/hide) properties of the main */
+    /* aplication component and the printing component       */
+    .page-break {
+        page-break-after: always;
+    }
+    app-print-layout {
+        display: block;
+    }
+    app-template {
+        display: none;
+    }
+    app-fullwidth {
+        display: none;
+    }
+    app-app-main-nav .tcbg {
+        background-color: var(--white) !important;
+    }
+    .a-tag {
+        text-decoration: none !important;
+    }
+    .a-tag:hover {
+        text-decoration: none !important;
+    }
+    
+    .print-container {
+        min-height: calc(100vh - 180px);
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .toast-container {
+        display: none;
+    }
+}
